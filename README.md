@@ -1,7 +1,7 @@
 
-今自分の考えてる事整理用 + チームへの共有用です。
+今自分の考えてる事の整理用 + チームへの共有用です。
 
-なにか問い合わせのある方は[@kgmyshin](https://twitter.com/kgmyshin)まで。
+なにか質問、問い合わせなどは[@kgmyshin](https://twitter.com/kgmyshin)まで。
 
 ## Androidの設計
 
@@ -347,6 +347,7 @@ public class HogeApplication extends Application {
 
 ## TODO
 
+- ContentProviderGeneratorの完成
 - Presentation層について
 - テストについて
 
