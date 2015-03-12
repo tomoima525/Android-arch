@@ -350,6 +350,7 @@ public class HogeApplication extends Application {
 - ContentProviderGeneratorの完成
 - Presentation層について
 - テストについて
+- ドメイン層よりしたのCodeGeneratorをつくる
 
 :
 
@@ -362,5 +363,10 @@ public class HogeApplication extends Application {
 それ以外だとイベントをストリームとするメリットあまりないかなという印象。
 ドメイン層から導入するとがっつり設計が変わるので、まだリスクが大きいかも。
 
+- Code Generatorについて
+
+Entityの内容と永続化先がどこか決まれば、あとは(ユースケースなどを除いて)ほとんど毎回同じコードです。
+なので、entityのクラス名、entityのメンバ、永続化先(providerかapiかprefsか)を指定すればできるのではないかと。
+ということで作ってみます。
 
 :
