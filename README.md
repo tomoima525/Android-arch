@@ -145,13 +145,13 @@ public class CreateHogeUseCaseImpl extends AsyncUseCase<CreateHogeUseCaseParams>
     private HogeRepository hogeRepository;
 
     public CreateUsageAsyncUseCase(HogeRepository hogeRepository) {
-        this.usageRepository = usageRepository;
+        this.hogeRepository = hogeRepository;
     }
 
     @Override
     public void call(CreateHogeUseCaseParams params) {
         Hoge hoge = params.hoge;
-        usageRepository.create(usage);
+        hogeRepository.create(usage);
         EventBus.getDefault.post(new OnCreated());
     }
 }
@@ -251,7 +251,7 @@ public class HogeDataRepository  implements HogeRepository {
     private HogeCache hogeCache;
     private HogeDao hogeDao;
 
-    public AppInfoDataRepository() {
+    public HogeDataRepository() {
         hogeCache = new HogeCache();
         hogeDao = new HogeDao();
     }
@@ -285,8 +285,8 @@ public class InfrastructureModule {
 
     @Provides
     @Singleton
-    HogeRepository provideHogeRepository(HogeDateRepository hogeDataRepository) {
-        return appInfoDataRepository;
+    HogeRepository provideHogeRepository() {
+        return new HogeDataRepository();
     }
     :
 
